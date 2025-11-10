@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up --build",
+    "docker:dev:down": "docker-compose -f docker-compose.dev.yml down",
+    "docker:build:dev": "docker build -f Dockerfile.dev -t random-words-frontend-dev .",
+    "docker:run:dev": "docker run -it --rm -p 5173:5173 -v \"$(pwd)/src:/app/src\" -v \"$(pwd)/public:/app/public\" -v \"$(pwd)/index.html:/app/index.html\" --name random-words-dev random-words-frontend-dev"
   },
   "dependencies": {
     "axios": "^1.13.2",

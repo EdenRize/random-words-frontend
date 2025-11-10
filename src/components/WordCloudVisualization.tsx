@@ -10,7 +10,7 @@ function WordCloudVisualization({ wordsData }: WordCloudVisualizationProps) {
 
   useEffect(() => {
     setCanvasWordCloud();
-  }, [wordsData]);
+  }, [wordsData, canvasRef]);
 
   const setCanvasWordCloud = () => {
     if (!canvasRef.current) {

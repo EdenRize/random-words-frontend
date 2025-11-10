@@ -16,7 +16,9 @@ function App() {
   }, []);
 
   const fetchWordsData = async () => {
-    if (loading) return;
+    if (loading) {
+      return;
+    }
     try {
       setLoading(true);
       setError(null);
